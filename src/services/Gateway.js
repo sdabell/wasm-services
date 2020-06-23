@@ -4,6 +4,10 @@
 
 const fs = require('fs');
 const buf = fs.readFileSync('../nanoServices/arithmeticServices.wasm');
+const bufAdd = fs.readFileSync('../nanoServices/addService.wasm');
+const bufSub = fs.readFileSync('../nanoServices/subService.wasm');
+const bufMult = fs.readFileSync('../nanoServices/multService.wasm');
+const bufDiv = fs.readFileSync('../nanoServices/divService.wasm');
 //const buf = fs.readFileSync('../wasm/a.out.wasm');
 //const buf = fs.readFileSync('./add.wasm');                                    
 let typedArray = new Uint8Array(buf);
