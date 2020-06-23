@@ -1,3 +1,10 @@
+const fs = require('fs');
+const buf = fs.readFileSync('../nanoServices/arithmeticServices.wasm');
+const bufAdd = fs.readFileSync('../nanoServices/addService.wasm');
+const bufSub = fs.readFileSync('../nanoServices/subService.wasm');
+const bufMult = fs.readFileSync('../nanoServices/multService.wasm');
+const bufDiv = fs.readFileSync('../nanoServices/divService.wasm');
+
 const express = require('express');
 const router = express.Router();
 
@@ -9,7 +16,7 @@ router.get('/arithmetic/add', (req, res) => {
     // send bufAdd along with req parameters to a generic work server
     
     res.status(200);
-//    res.send(req.query.x + req.query.y);
+    res.send((parseInt(req.query.x) + parseInt(req.query.y)).toString());
 });
 
 router.get('/arithmetic/sub', (req, res) => {
@@ -18,6 +25,7 @@ router.get('/arithmetic/sub', (req, res) => {
     // send bufAdd along with req parameters to a generic work server
 
     res.status(200);
+    res.send((parseInt(req.query.x) - parseInt(req.query.y)).toString());
 });
 
 router.get('/arithmetic/mult', (req, res) => {
@@ -26,6 +34,7 @@ router.get('/arithmetic/mult', (req, res) => {
     // send bufAdd along with req parameters to a generic work server
 
     res.status(200);
+    res.send((parseInt(req.query.x) * parseInt(req.query.y)).toString());
 });
 
 router.get('/arithmetic/div', (req, res) => {
@@ -33,6 +42,7 @@ router.get('/arithmetic/div', (req, res) => {
     const divAdd = fs.readFileSync('../nanoServices/divService.wasm');
 
     res.status(200);
+    res.send((parseInt(req.query.x) / parseInt(req.query.y)).toString());
 });
 
 module.exports = router;

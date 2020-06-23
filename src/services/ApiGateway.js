@@ -2,7 +2,7 @@
  *  Gateway to process arithmetic requests and forward requests with wasm to worker nano service nodes
  */
 
-const https = require('https');
+const http = require('http');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -48,8 +48,8 @@ const myMethod = async (bytes) => {
     }
 }
 
-myMethod(buf).catch( e => { console.error(e) } );
-console.log(res);
+//myMethod(buf).catch( e => { console.error(e) } );
+//console.log(res);
 
 
 class ApiGateway {
@@ -63,9 +63,8 @@ class ApiGateway {
     app.use(bodyParser.json({type: 'application/vnd.api+json'}));
     app.use(cors());
     app.use('/', router);
-    const server = https.createServer(opts, app).listen(port, () => {
-      console.log(`ApiGateway listening on port ${port}`);
-    });
+    const server = http.createServer(app);
+    server.listen(port);
     server.on('request', (req, res) => {
       console.log(`API gateway received request`);
     });
