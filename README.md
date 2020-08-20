@@ -4,15 +4,15 @@ This repo demonstrates using WASM to service API endpoints via an API gateway.  
 
 This demo uses nodejs as the WASM vm and emscripten as the WASM compiler.
 
-Examlple requests:  the API endpoints are arithmetic functions:
-http://127.0.0.1:8080/arithmetic/add?x=3&y=2
-Browser returns: 3 + 2 = 5
-http://127.0.0.1:8080/arithmetic/sub?x=3&y=2
-Browser returns: 3 - 2 = 1
-http://127.0.0.1:8080/arithmetic/mult?x=3&y=2
-Browser returns: 3 * 2 = 6
-http://127.0.0.1:8080/arithmetic/div?x=3&y=2
-Browser returns: 3 / 2 = 1
+Examlple requests:  the API endpoints are arithmetic functions: <br />
+http://127.0.0.1:8080/arithmetic/add?x=3&y=2 <br />
+Browser returns: 3 + 2 = 5 <br />
+http://127.0.0.1:8080/arithmetic/sub?x=3&y=2 <br />
+Browser returns: 3 - 2 = 1 <br />
+http://127.0.0.1:8080/arithmetic/mult?x=3&y=2 <br />
+Browser returns: 3 * 2 = 6 <br />
+http://127.0.0.1:8080/arithmetic/div?x=3&y=2 <br />
+Browser returns: 3 / 2 = 1 <br />
 
 To deploy follow these steps:
 1) install inscripten
