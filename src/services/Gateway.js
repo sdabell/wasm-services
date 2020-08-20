@@ -14,7 +14,7 @@ let typedArray = new Uint8Array(buf);
 let res;
 let count = 0;
 let importObject = { imports: { imported_func: arg => console.log(arg) } };
-
+/*
 const env = {
     memoryBase: 0,
     tableBase: 0,
@@ -26,7 +26,7 @@ const env = {
       element: 'anyfunc'
     })
   }
-
+*/
 const myMethod = async (bytes) => {
     res = await new WebAssembly.instantiate(bytes, importObject);
     const { add } = res.instance.exports;
